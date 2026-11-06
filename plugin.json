@@ -1,0 +1,10 @@
+{
+  "name": "Radmin VPN",
+  "author": "Steam Deck local build",
+  "flags": ["root"],
+  "api_version": 1,
+  "publish": {
+    "tags": ["network", "utility", "root"],
+    "description": "Start and stop a configured Radmin VPN from Gaming Mode."
+  }
+}

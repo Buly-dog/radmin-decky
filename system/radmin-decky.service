@@ -1,0 +1,24 @@
+[Unit]
+Description=Radmin VPN for Decky
+Wants=network-online.target
+After=network-online.target
+ConditionPathExists=/etc/radmin-decky/installed.json
+
+[Service]
+Type=simple
+User=deck
+Group=deck
+Environment=HOME=/home/deck
+Environment=USER=deck
+Environment=LANG=C.UTF-8
+ExecStart=/usr/bin/python3 -I /etc/radmin-decky/runner.py
+ExecStopPost=+/usr/bin/python3 -I /etc/radmin-decky/net_helper.py cleanup-if-idle
+KillMode=mixed
+TimeoutStopSec=60
+Restart=no
+UMask=0077
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

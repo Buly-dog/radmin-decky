@@ -1,0 +1,7 @@
+node_modules/
+release/
+__pycache__/
+.test-data/
+.tools/
+.env*
+dist/

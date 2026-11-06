@@ -1,0 +1,3 @@
+#!/bin/bash
+# Only inside Radmin's PATH. Never grants a shell or generic passwordless sudo.
+exec /usr/bin/sudo -n /usr/bin/python3 -I /etc/radmin-decky/net_helper.py "$@"
