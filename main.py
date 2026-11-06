@@ -7,7 +7,7 @@ UNIT = "radmin-decky.service"
 SYSTEMCTL = "/usr/bin/systemctl"
 CONFIG = Path("/etc/radmin-decky")
 INSTALL_UNIT = "radmin-decky-install.service"
-SYSTEM_VERSION = "0.1.6"
+SYSTEM_VERSION = "0.1.9"
 
 
 def gui_mode():

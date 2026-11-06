@@ -78,6 +78,7 @@ def main():
         for key in ("LD_PRELOAD", "LD_LIBRARY_PATH", "WINEARCH", "WINEDLLOVERRIDES",
                     "RADMIN_INSTALLER_URL", "RADMIN_VERSION", "RADMIN_SHA256"):
             env.pop(key, None)
+        env["RADMIN_DECKY_KEEP_RUNNING"] = "0" if configure else "1"
         if not configure:
             session_environment(env)
         token = env.get("INVOCATION_ID") or uuid.uuid4().hex

@@ -83,7 +83,7 @@ function Content() {
     </PanelSection>
     <PanelSection title="Режим запуска">
       <PanelSectionRow><ToggleField label="Запуск с окном Radmin"
-        description="Для проверки подключения: запускает обычное окно прямо в игровом режиме. Закрытие окна остановит VPN."
+        description="Открывает окно Radmin в игровом режиме. Для отключения VPN используйте переключатель плагина."
         checked={status?.gui_mode ?? false}
         disabled={busy || !status?.installed || status.enabled || status.state === "deactivating"}
         onChange={(value) => { void act(() => setGuiMode(value)); }} />

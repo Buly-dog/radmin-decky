@@ -5,7 +5,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 RELEASE = ROOT / "release"
-VERSION = "0.1.6"
+VERSION = "0.1.9"
 
 
 def add(archive, file, name):

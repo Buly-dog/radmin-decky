@@ -1,6 +1,6 @@
 {
   "name": "radmin-decky",
-  "version": "0.1.6",
+  "version": "0.1.9",
   "type": "module",
   "description": "Radmin VPN controls for Steam Deck Gaming Mode",
   "license": "MIT",

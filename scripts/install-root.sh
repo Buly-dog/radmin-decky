@@ -31,6 +31,7 @@ chown -R root:root "$ASSETS"
 # cp -a preserves private AppImage modes. After chown, mode 0700/0600 would
 # lock deck out. Grant read/traverse while keeping the runtime non-writable.
 chmod -R u=rwX,go=rX "$ASSETS"
+/usr/bin/python3 -I "$SOURCE/scripts/patch_runtime.py" --upgrade-gui "$ASSETS"
 RUNUSER=$(command -v runuser)
 "$RUNUSER" -u deck -- /usr/bin/python3 -I "$SOURCE/scripts/runtime_access.py" "$ASSETS"
 if [[ ${3:-} != --system-only ]]; then
@@ -72,7 +73,7 @@ DESKTOP
 chown deck:deck /home/deck/Desktop/Radmin-VPN-Setup.desktop
 chmod 755 /home/deck/Desktop/Radmin-VPN-Setup.desktop
 systemctl daemon-reload
-printf '%s\n' '{"version":"0.1.6","upstream":"v1.1.1"}' > "$CFG/installed.json.new"
+printf '%s\n' '{"version":"0.1.9","upstream":"v1.1.1"}' > "$CFG/installed.json.new"
 chmod 644 "$CFG/installed.json.new"
 mv -f -- "$CFG/installed.json.new" "$CFG/installed.json"
 # Explicit switch only. Do not enable boot autostart in the first test build.
